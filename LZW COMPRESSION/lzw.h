@@ -80,13 +80,13 @@ void encode(string &sinput,string &soutputPath,int info){
                //outputPath << last << " ";
                uint16_t c = last;
                saveSettings(outputPath,c);
-               cout << last << '\n';
+              // cout << last << '\n';
           }
      }
      //outputPath << (int) x;
      uint16_t c = (int) x;
      saveSettings(outputPath,c);
-     cout << c << '\n';
+     //cout << c << '\n';
      //outputPath.write((char*)&x,2);
      outputPath.close();
      input.close();
