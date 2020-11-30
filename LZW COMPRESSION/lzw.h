@@ -60,6 +60,7 @@ void encode(string &sinput,string &soutputPath,int info){
      ofstream outputPath(soutputPath,ios::binary|ios::out);
 
      vector<string> dict;
+     vector<uint16_t> savefile;
 
      Node* root = create_node(-1);
       for (int i=0; i<256; i++)
@@ -78,16 +79,18 @@ void encode(string &sinput,string &soutputPath,int info){
                     dict.push_back(st);
                st = st[st.length()-1];
                //outputPath << last << " ";
+
+               // cout << last << '\n';
                uint16_t c = last;
                saveSettings(outputPath,c);
-              // cout << last << '\n';
+
           }
      }
      //outputPath << (int) x;
+     //cout << c << '\n';
      uint16_t c = (int) x;
      saveSettings(outputPath,c);
-     //cout << c << '\n';
-     //outputPath.write((char*)&x,2);
+
      outputPath.close();
      input.close();
      outputinfo(info,dict,sinput,soutputPath);
